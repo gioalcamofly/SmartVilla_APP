@@ -1,0 +1,40 @@
+<ion-header>
+ <ion-navbar color="secondary">
+  <ion-title>
+    SmartVilla
+  </ion-title>
+  <ion-buttons start>
+      <button ion-button icon-only (click)="logout()"><ion-icon name="power"></ion-icon></button>
+  </ion-buttons>
+ </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="message-form">
+      <ion-col>
+          <ion-list inset>
+            <form (ngSubmit)="sendMessage()">
+              <ion-item>
+                <ion-label><ion-icon name="person"></ion-icon></ion-label>
+                <ion-input placeholder="From:" [(ngModel)]="from" name="from" type="text" required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label><ion-icon name="person"></ion-icon></ion-label>
+                <ion-input placeholder="To:" [(ngModel)]="to" name="to" type="text"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label><ion-icon name="text"></ion-icon></ion-label>
+                <ion-input placeholder="message" [(ngModel)]="message" name="messsage" type="text"></ion-input>
+              </ion-item>
+
+                <button ion-button full type="submit"  color="primary" class="send-button">Send message</button>
+              </form>
+          </ion-list>
+
+
+
+      </ion-col>
+  </ion-row>
+
+</ion-content>
