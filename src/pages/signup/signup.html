@@ -14,6 +14,16 @@
             <ion-list inset>
 
                 <ion-item>
+                  <ion-label><ion-icon name="person"></ion-icon></ion-label>
+                  <ion-input [(ngModel)]="name" placeholder="Name" type="text"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-label><ion-icon name="person"></ion-icon></ion-label>
+                  <ion-input [(ngModel)]="surname" placeholder="Surname" type="text"></ion-input>
+                </ion-item>
+
+                <ion-item>
                     <ion-label><ion-icon name="mail"></ion-icon></ion-label>
                     <ion-input [(ngModel)]="email" placeholder="Email" type="email"></ion-input>
                 </ion-item>

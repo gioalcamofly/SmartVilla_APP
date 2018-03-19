@@ -18,6 +18,7 @@ export class Todos {
       headers.append('Authorization', this.authService.token);
 
       this.http.get('https://stetter-prueba.herokuapp.com/api/todos', {headers: headers})
+      //this.http.get('http://localhost:8080/api/todos', {headers: headers})
         .map(res => res.json())
         .subscribe(data => {
           resolve(data);
@@ -37,6 +38,7 @@ export class Todos {
       headers.append('Authorization', this.authService.token);
 
       this.http.post('https://stetter-prueba.herokuapp.com/api/todos', JSON.stringify(todo), {headers: headers})
+      //this.http.post('http://localhost:8080/api/todos', JSON.stringify(todo), {headers: headers})
         .map(res => res.json())
         .subscribe(res => {
           resolve(res);
@@ -56,6 +58,7 @@ export class Todos {
         headers.append('Authorization', this.authService.token);
 
         this.http.delete('https://stetter-prueba.herokuapp.com/api/todos/' + id, {headers: headers}).subscribe((res) => {
+        //this.http.delete('http://localhost:8080/api/todos/' + id, {headers: headers}).subscribe((res) => {
             resolve(res);
         }, (err) => {
             reject(err);
