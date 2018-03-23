@@ -22,7 +22,6 @@ ionViewDidLoad() {
 
     this.showLoader();
 
-    //Check if already authenticated
     this.authService.checkAuthentication().then((res) => {
         console.log("Already authorized");
         this.loading.dismiss();
@@ -35,6 +34,11 @@ ionViewDidLoad() {
 }
 
 login(){
+
+    if (this.email === undefined || this.password === undefined) {
+      alert("You must fulfill all the labels");
+      return;
+    }
 
     this.showLoader();
 

@@ -2,9 +2,13 @@
 
     home-page {
 
-        ion-content {
-            background-color: map-get($colors, secondary);
+        body {
+          background: -webkit-gradient(linear, left top, left bottom, from(#538478), to(#2B2D4C)) fixed;
         }
+
+        /*ion-content {
+            background-color: map-get($colors, secondary);
+        }*/
 
         ion-row {
             align-items: center;

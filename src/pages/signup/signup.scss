@@ -2,14 +2,15 @@
 
     signup-page {
 
-        ion-content {
+        /*ion-content {
             background-color: map-get($colors, secondary);
-        }
+        }*/
 
         scroll-content {
             display: flex;
             flex-direction: column;
         }
+
 
         ion-item {
             border-radius: 30px !important;

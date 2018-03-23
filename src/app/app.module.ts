@@ -11,11 +11,10 @@ import { Todos } from '../providers/todos/todos';
 import { Auth } from '../providers/auth/auth';
 import { Message } from '../providers/message/message';
 import { StatusBar } from '@ionic-native/status-bar';
-import { Cam } from '../providers/camera/camera';
+//import { Cam } from '../providers/camera/camera';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
-import { FilePath } from '@ionic-native/file-path';
 
 @NgModule({
   declarations: [
@@ -37,6 +36,6 @@ import { FilePath } from '@ionic-native/file-path';
     LoginPage,
     SignupPage
   ],
-  providers: [Todos, Auth, StatusBar, Message, Camera, Cam, File, FileTransfer, FilePath]
+  providers: [Todos, Auth, StatusBar, Message, Camera, /*Cam,*/ File, FileTransfer]
 })
 export class AppModule {}

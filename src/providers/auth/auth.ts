@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import { File } from '@ionic-native/file';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -9,7 +12,7 @@ export class Auth {
   public token: any;
   public userData: any;
 
-  constructor(public http: Http, public storage: Storage) {
+  constructor(public http: Http, public storage: Storage, public file: File, public transfer: FileTransfer) {
 
   }
 
@@ -116,6 +119,56 @@ export class Auth {
         });
 
     });
+  }
+
+  uploadImage(residency_image, filename) { //imagePath
+      var url = "https://content.dropboxapi.com/2/files/upload";
+
+      let args = {
+        "path": "/" + filename,
+        "mode": "add",
+        "autorename": true,
+        "mute": false
+      }
+
+      /*var targetPath = this.pathForImage(this.residency_image);
+      console.log(targetPath);
+      console.log(this.residency_image);*/
+
+
+      let headers = new Headers();
+      headers.append('Authorization', 'Bearer ' + 'FmcBBiviaJAAAAAAAAAADxvxdjxe_YJZlaHAswciEBVeSgTBFDYbVF2YJIo_RPLd');
+      headers.append('Dropbox-API-Arg', JSON.stringify(args));
+      headers.append('Content-Type', 'application/octet-stream');
+
+      let options: FileUploadOptions = {
+        fileKey: 'file',
+        fileName: filename,
+        chunkedMode: false,
+        mimeType: "image/jpeg",
+        //params : {'filename': this.userInfo.name + " " + this.userInfo.surname},
+        headers : headers
+      };
+
+      /*this.http.post(url, this.residency_image, {headers: headers});*/
+      const filetransfer: FileTransferObject = this.transfer.create();
+
+      //console.log(options);
+
+
+
+      filetransfer.upload(residency_image, url, options).then(data => {
+        //this.loading.dismiss();
+        console.log("Image has been correctly uploaded");
+        //console.log(data);
+      }, err => {
+        //this.loading.dismiss();
+        //document.getElementById("tupac").innerHTML = JSON.stringify(err) ;
+        alert("Error while uploading image");
+        /*alert(err);
+        console.log("Error al subir la imagen");
+        console.log(err);*/
+      });
   }
 
   logout(){

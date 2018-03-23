@@ -2,14 +2,15 @@
 
     login-page {
 
-        ion-content {
+        /*ion-content {
             background-color: map-get($colors, secondary);
-        }
+        }*/
 
         scroll-content {
             display: flex;
             flex-direction: column;
         }
+        
 
         ion-row {
             align-items: center;

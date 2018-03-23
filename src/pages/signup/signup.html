@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar color="secondary">
+  <ion-navbar transparent>
     <ion-title>Create Account</ion-title>
   </ion-navbar>
 
@@ -32,11 +32,10 @@
                     <ion-label><ion-icon name="lock"></ion-icon></ion-label>
                     <ion-input [(ngModel)]="password" placeholder="Password" type="password"></ion-input>
                 </ion-item>
-
-
+                
             </ion-list>
 
-            <button ion-button (click)="register()" class="continue-button">Register</button>
+            <button ion-button (click)="takePhoto()" class="continue-button">Register</button>
 
         </ion-col>
     </ion-row>
