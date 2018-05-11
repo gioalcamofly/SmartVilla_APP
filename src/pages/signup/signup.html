@@ -1,43 +1,51 @@
 <ion-header>
 
   <ion-navbar transparent>
-    <ion-title>Create Account</ion-title>
+    <ion-title>
+      <p style="font-size: 2rem">Create Account</p>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+    <ion-row>
+      <img class="greenLogo" src="assets/imgs/Green_Island_logo.png">
+    </ion-row>
     <ion-row class="account-form">
         <ion-col>
             <ion-list inset>
 
                 <ion-item>
-                  <ion-label><ion-icon name="person"></ion-icon></ion-label>
+                  <ion-label color="white"><ion-icon name="person"></ion-icon></ion-label>
                   <ion-input [(ngModel)]="name" placeholder="Name" type="text"></ion-input>
                 </ion-item>
 
                 <ion-item>
-                  <ion-label><ion-icon name="person"></ion-icon></ion-label>
+                  <ion-label color="white"><ion-icon name="person"></ion-icon></ion-label>
                   <ion-input [(ngModel)]="surname" placeholder="Surname" type="text"></ion-input>
                 </ion-item>
 
                 <ion-item>
-                    <ion-label><ion-icon name="mail"></ion-icon></ion-label>
-                    <ion-input [(ngModel)]="email" placeholder="Email" type="email"></ion-input>
+                  <ion-label color="white"><ion-icon name="mail"></ion-icon></ion-label>
+                  <ion-input [(ngModel)]="email" placeholder="Email" type="email"></ion-input>
                 </ion-item>
 
                 <ion-item>
-                    <ion-label><ion-icon name="lock"></ion-icon></ion-label>
-                    <ion-input [(ngModel)]="password" placeholder="Password" type="password"></ion-input>
+                  <ion-label color="white"><ion-icon name="lock"></ion-icon></ion-label>
+                  <ion-input [(ngModel)]="password" placeholder="Password" type="password"></ion-input>
                 </ion-item>
-                
+
+                <ion-item>
+                  <ion-label color="white"><ion-icon name="lock"></ion-icon></ion-label>
+                  <ion-input [(ngModel)]="conPassword" placeholder="Confirm password" type="password"></ion-input>
+                </ion-item>
+
+                <button ion-button full (click)="signUp()" class="continue-button" style="margin-top: 2em">Register</button>
             </ion-list>
-
-            <button ion-button (click)="takePhoto()" class="continue-button">Register</button>
-
         </ion-col>
     </ion-row>
+
 
 </ion-content>

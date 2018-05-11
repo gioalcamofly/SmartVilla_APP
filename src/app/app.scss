@@ -15,20 +15,52 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+.platform-android {
+  .ion-page {
+    ion-header {
+      padding-top: $cordova-md-statusbar-padding;
+    }
+  }
+}
+
+@font-face {
+  font-family: 'KOMIKA HAND';
+  src: url("../assets/fonts/trench100free.ttf") format('truetype');
+}
+
 .ios, .md {
 
   ion-content {
-    background: -webkit-gradient(linear, left top, left bottom, from(#538478), to(#2B2D4C)) fixed;
+    background: -webkit-gradient(linear, left bottom, right top, from(#95c120), to(#EAFAC2)) fixed;
+    //background: #ffffff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
   }
 
   .bar-buttons,
-  .toolbar-title,
   ion-header ion-icon.back-button-icon.icon {
-    color: #fff;
+    color: #497500;
+  }
+  .toolbar-title {
+    color: #497500;
+    font-size: 3em;
+  }
+  ion-header {
+    //background: #95c120;
+  }
+  .greenLogo {
+    heigth: auto;
+    width: 30vw;
+    //align-items: center;
+    padding-top: 10%;
+    margin: auto;
+    display: block;
+  }
+  ion-content {
+    font-family: 'KOMIKA HAND';
+    font-weight: bold;
   }
 
 
-  /*ion-navbar {
-    color: #2B2D4C;
-  }*/
 }

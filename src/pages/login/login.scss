@@ -2,15 +2,10 @@
 
     login-page {
 
-        /*ion-content {
-            background-color: map-get($colors, secondary);
-        }*/
-
         scroll-content {
             display: flex;
             flex-direction: column;
         }
-        
 
         ion-row {
             align-items: center;
@@ -18,16 +13,22 @@
         }
 
         ion-item {
-            border-radius: 30px !important;
+            border-radius: 5px !important;
             padding-left: 10px !important;
-            margin-bottom: 10px;
-            background-color: #f6f6f6;
-            opacity: 0.7;
-            font-size: 0.9em;
+            margin-bottom: 7px;
+            //background-color: #f6f6f6;
+            background-color: transparent;
+            //opacity: 0.7;
+            font-size: 1em;
         }
 
         ion-list {
             margin: 0;
+        }
+
+        #smart-title {
+          text-align: center;
+          font-family: 'KOMIKA HAND';
         }
 
         .login-logo {
@@ -36,20 +37,22 @@
 
         .login-form {
             flex: 1;
-        }
-
-        .create-account {
-            color: #fff;
-            text-decoration: underline;
-            background: none;
+            margin-top: 10%;
         }
 
         .login-button {
-            border-radius: 30px;
+            border-radius: 5px;
             font-size: 0.9em;
-            background-color: transparent;
-            border: 1px solid #fff;
+            color: white;
+            background-color: #497500;
+            opacity: 0.8;
+            margin-bottom: 1em;
+            box-shadow: none;
+            //border: 1px solid #fff;
         }
+
+
+
 
     }
 

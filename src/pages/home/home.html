@@ -4,36 +4,41 @@
     SmartVilla
   </ion-title>
   <ion-buttons start>
+      <button ion-button icon-only (click)="settings()"><ion-icon name="settings"></ion-icon></button>
       <button ion-button icon-only (click)="logout()"><ion-icon name="power"></ion-icon></button>
   </ion-buttons>
  </ion-navbar>
 </ion-header>
 
 <ion-content>
+  <ion-row>
+    <img class="greenLogo" src="assets/imgs/Green_Island_logo.png">
+  </ion-row>
+
+
   <ion-row class="message-form">
       <ion-col>
           <ion-list inset>
             <form (ngSubmit)="sendMessage()">
 
               <ion-item>
-                <ion-label><ion-icon name="person"></ion-icon></ion-label>
+                <ion-label stacked color="white"><ion-icon name="person"></ion-icon> To: </ion-label>
                 <ion-select [(ngModel)]="userShow" okText="Okay" cancelText="Dismiss" name="usersList">
                   <ion-option *ngFor="let user of usersList" [value] = "user">{{user.name}} {{user.surname}}</ion-option>
                 </ion-select>
               </ion-item>
 
               <ion-item>
-                <ion-label><ion-icon name="text"></ion-icon></ion-label>
-                <ion-input placeholder="Message" [(ngModel)]="message" name="messsage" type="text"></ion-input>
+                <ion-label stacked color="white"><ion-icon name="text"></ion-icon> Message</ion-label>
+                <ion-input [(ngModel)]="message" name="message" type="text"></ion-input>
               </ion-item>
 
-                <button ion-button full type="submit"  color="primary" class="send-button">Send message</button>
+                <button ion-button full type="submit" class="send-button" style="margin-top:2em">Send message</button>
               </form>
           </ion-list>
 
-
-
       </ion-col>
   </ion-row>
+
 
 </ion-content>

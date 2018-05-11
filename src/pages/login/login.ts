@@ -3,6 +3,8 @@ import { NavController, LoadingController } from 'ionic-angular';
 import { Auth } from '../../providers/auth/auth';
 import { HomePage } from '../home/home';
 import { SignupPage } from '../signup/signup';
+import { EmailValidator } from '@angular/forms';
+import { AlertController } from 'ionic-angular';
 
 @Component({
 selector: 'login-page',
@@ -14,7 +16,8 @@ email: string;
 password: string;
 loading: any;
 
-constructor(public navCtrl: NavController, public authService: Auth, public loadingCtrl: LoadingController) {
+constructor(public navCtrl: NavController, public authService: Auth, public loadingCtrl: LoadingController,
+            public alertCtrl: AlertController) {
 
 }
 
@@ -36,7 +39,7 @@ ionViewDidLoad() {
 login(){
 
     if (this.email === undefined || this.password === undefined) {
-      alert("You must fulfill all the labels");
+      this.failedAlert("Data missed", "You must fulfill all the labels");
       return;
     }
 
@@ -53,6 +56,7 @@ login(){
         this.navCtrl.setRoot(HomePage);
     }, (err) => {
         this.loading.dismiss();
+        this.failedAlert("Wrong data", "The user you introduced is not valid. Please, try again");
         console.log(err);
     });
 
@@ -60,6 +64,15 @@ login(){
 
 launchSignup(){
     this.navCtrl.push(SignupPage);
+}
+
+failedAlert(error, text) {
+  let alert = this.alertCtrl.create({
+    title: error,
+    subTitle: text,
+    buttons: ['Ok']
+  });
+  alert.present();
 }
 
 showLoader(){

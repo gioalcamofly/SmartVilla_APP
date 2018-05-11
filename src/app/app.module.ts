@@ -15,6 +15,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { AndroidFullScreen } from '@ionic-native/android-full-screen';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,6 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
     LoginPage,
     SignupPage
   ],
-  providers: [Todos, Auth, StatusBar, Message, Camera, /*Cam,*/ File, FileTransfer]
+  providers: [Todos, Auth, StatusBar, AndroidFullScreen, Message, Camera, /*Cam,*/ File, FileTransfer]
 })
 export class AppModule {}

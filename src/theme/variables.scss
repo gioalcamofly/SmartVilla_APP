@@ -22,9 +22,15 @@ $app-direction: ltr;
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
-
-
-
+//$alert-md-button-background-color: #497500;
+$alert-md-button-text-color: #497500;
+$text-color:  white !default;
+$toolbar-background:  transparent !default;
+$select-md-placeholder-color: #497500;
+$select-md-icon-color: #497500;
+$alert-md-radio-label-text-color-checked: #497500;
+$alert-md-radio-border-color-on: #497500;
+$alert-md-background-color: #f5f5f5;
 // Named Color Variables
 // --------------------------------------------------
 // Named colors makes it easy to reuse colors on various components.
@@ -34,11 +40,13 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
+  //primary:    #488aff,
+  primary:    #ffffff,
   secondary:  #6e9886,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  white:      #ffffff
 );
 
 
